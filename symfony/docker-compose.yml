@@ -4,11 +4,11 @@ services:
     php:
         build:
             context: ./php
-        volumes:
-            - ./app:/symfony-project
     nginx:
         build: nginx
         ports:
             - 8000:80
+        volumes:
+            - ./app:/symfony-project
         volumes_from:
             - php
